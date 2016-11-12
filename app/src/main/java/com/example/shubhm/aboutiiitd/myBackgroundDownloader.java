@@ -29,6 +29,7 @@ public class myBackgroundDownloader extends AsyncTask<String,Void,String> {
 
              //   Document document = Jsoup.connect(url).get();
                 str=mydownloader(strings[0]);//downloadUrl(strings[0]);
+                System.out.println(str);
                 return str;
 
             } catch (Exception e) {
@@ -44,8 +45,9 @@ public class myBackgroundDownloader extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String s) {
-
-        MainActivity.textView.setText(strparser(str));
+        String mystring=strparser(str);
+        System.out.println(mystring);
+        MainActivity.textView.setText(mystring);
         super.onPostExecute(s);
 
     }
